@@ -17,7 +17,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   margin: 0;
   color: var(--text);
@@ -25,6 +25,7 @@ body {
   font-family: Poppins, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img { max-width: 100%; display: block; }
@@ -35,6 +36,7 @@ a:hover { text-decoration: underline; }
 .wrap {
   width: min(var(--max), calc(100% - 32px));
   margin-inline: auto;
+  min-width: 0;
 }
 
 .skip {
@@ -125,6 +127,7 @@ a:hover { text-decoration: underline; }
   border-radius: 999px;
   padding: 2px;
   margin-left: 4px;
+  flex: 0 0 auto;
 }
 .lang-switch button {
   appearance: none;
@@ -151,6 +154,7 @@ a:hover { text-decoration: underline; }
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
+  min-width: 0;
 }
 
 .hero {
@@ -163,7 +167,7 @@ a:hover { text-decoration: underline; }
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 40px;
   align-items: center;
 }
@@ -233,7 +237,7 @@ a:hover { text-decoration: underline; }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 24px;
 }
@@ -267,6 +271,7 @@ a:hover { text-decoration: underline; }
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   letter-spacing: -0.02em;
   line-height: 1.15;
+  overflow-wrap: break-word;
 }
 .doc-meta {
   display: flex;
@@ -284,7 +289,7 @@ a:hover { text-decoration: underline; }
 
 .doc-layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
   gap: 28px;
   padding: 28px 0 64px;
   align-items: start;
@@ -296,6 +301,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 16px;
+  min-width: 0;
 }
 .toc h2 {
   margin: 0 0 10px;
@@ -320,6 +326,8 @@ a:hover { text-decoration: underline; }
   border-radius: 24px;
   padding: clamp(20px, 4vw, 40px);
   box-shadow: var(--shadow);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .article section { padding: 8px 0 22px; border-bottom: 1px solid var(--line); }
 .article section:last-of-type { border-bottom: 0; }
@@ -331,6 +339,10 @@ a:hover { text-decoration: underline; }
 .article p, .article li { font-size: 1rem; }
 .article ul { padding-left: 1.15rem; }
 .article li + li { margin-top: 6px; }
+.article code {
+  font-size: 0.9em;
+  word-break: break-all;
+}
 .contact-box {
   background: var(--green-soft);
   border-radius: 16px;
@@ -349,7 +361,7 @@ a:hover { text-decoration: underline; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 24px;
 }
 .site-footer a { color: #fff; }
@@ -369,29 +381,47 @@ a:hover { text-decoration: underline; }
 }
 
 @media (max-width: 900px) {
-  .hero-grid, .doc-layout, .cards, .footer-grid {
-    grid-template-columns: 1fr;
+  .hero-grid, .cards, .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .doc-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding: 16px 0 40px;
   }
   .toc {
     position: static;
-    display: flex;
-    flex-direction: column;
+    padding: 12px;
   }
   .toc-links {
     display: flex;
-    gap: 6px;
-    overflow-x: auto;
-    padding-bottom: 4px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
-  .toc a { white-space: nowrap; }
+  .toc a {
+    display: inline-flex;
+    white-space: normal;
+    line-height: 1.25;
+    padding: 7px 10px;
+    background: var(--green-soft);
+    font-size: 0.78rem;
+  }
+  .doc-hero { padding: 24px 0 28px; }
+  .doc-hero h1 { font-size: clamp(1.35rem, 7vw, 2rem); }
 }
 
 @media (max-width: 640px) {
-  .header-inner { flex-wrap: wrap; padding-block: 10px; }
+  .wrap { width: min(var(--max), calc(100% - 24px)); }
+  .header-inner { flex-wrap: wrap; padding-block: 10px; gap: 10px; }
   .header-actions { width: 100%; justify-content: space-between; }
   .nav { width: auto; justify-content: flex-start; }
-  .nav a { padding: 8px 10px; font-size: 0.8rem; }
+  .nav a { padding: 8px 10px; font-size: 0.78rem; }
   .brand-text small { display: none; }
-  .hero, .doc-hero { padding-top: 28px; }
-  .article { padding: 18px; border-radius: 16px; }
+  .hero { padding: 28px 0 40px; }
+  .doc-hero { padding: 20px 0 22px; }
+  .article { padding: 16px; border-radius: 14px; }
+  .article h2 { font-size: 1.05rem; }
+  .article p, .article li { font-size: 0.95rem; }
+  .chip { font-size: 0.72rem; max-width: 100%; }
+  .contact-box { padding: 12px; overflow-wrap: anywhere; }
 }
