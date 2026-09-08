@@ -4,47 +4,70 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#121212" />
-  <meta name="description" content="Conditions générales d’utilisation de l’application Ngoma." />
-  <title>Conditions générales — Ngoma</title>
+  <meta name="description" content="Terms of use for the Ngoma app." />
+  <title>Terms of use — Ngoma</title>
   <link rel="icon" href="assets/mark.png" />
   <link rel="apple-touch-icon" href="assets/mark.png" />
+  <link rel="alternate" hreflang="fr" href="terms.html?lang=fr" />
+  <link rel="alternate" hreflang="en" href="terms.html?lang=en" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip" href="#contenu">Aller au contenu</a>
+  <a class="skip" href="#contenu">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/mark.png" alt="Logo Ngoma" />
+        <img class="brand-mark" src="assets/mark.png" alt="Ngoma logo" />
         <span class="brand-text">
           <strong>NGOMA</strong>
           <small>25F ne cherche pas son frère</small>
         </span>
       </a>
-      <nav class="nav" aria-label="Principal">
-        <a href="index.html">Accueil</a>
-        <a href="privacy.html">Confidentialité</a>
-        <a href="terms.html" class="active">Conditions</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="nav" data-lang="fr" aria-label="Principal">
+          <a href="index.html">Accueil</a>
+          <a href="privacy.html">Confidentialité</a>
+          <a href="terms.html" class="active">Conditions</a>
+        </nav>
+        <nav class="nav" data-lang="en" hidden aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html" class="active">Terms</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-set-lang="fr">FR</button>
+          <button type="button" data-set-lang="en">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <header class="doc-hero">
     <div class="wrap">
-      <span class="eyebrow">Documents légaux</span>
-      <h1>Conditions générales d’utilisation</h1>
-      <div class="doc-meta">
-        <span class="chip">Effective : 8 septembre 2026</span>
-        <span class="chip">App : com.shifter.ngoma</span>
+      <div data-lang="fr">
+        <span class="eyebrow">Documents légaux</span>
+        <h1>Conditions générales d’utilisation</h1>
+        <div class="doc-meta">
+          <span class="chip">Effective : 8 septembre 2026</span>
+          <span class="chip">App : com.shifter.ngoma</span>
+        </div>
+      </div>
+      <div data-lang="en" hidden>
+        <span class="eyebrow">Legal</span>
+        <h1>Terms of use</h1>
+        <div class="doc-meta">
+          <span class="chip">Effective: 8 September 2026</span>
+          <span class="chip">App: com.shifter.ngoma</span>
+        </div>
       </div>
     </div>
   </header>
 
   <div class="wrap doc-layout" id="contenu">
-    <aside class="toc">
+    <aside class="toc" data-lang="fr">
       <h2>Sommaire</h2>
       <div class="toc-links">
         <a href="#intro">Introduction</a>
@@ -59,8 +82,23 @@
         <a href="#contact">Contact</a>
       </div>
     </aside>
+    <aside class="toc" data-lang="en" hidden>
+      <h2>Contents</h2>
+      <div class="toc-links">
+        <a href="#intro-en">Introduction</a>
+        <a href="#purpose">Purpose</a>
+        <a href="#account">Account</a>
+        <a href="#backup">Backup</a>
+        <a href="#acceptable">Acceptable use</a>
+        <a href="#ip">Intellectual property</a>
+        <a href="#liability">Liability</a>
+        <a href="#acceptance">Acceptance</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact-en">Contact</a>
+      </div>
+    </aside>
 
-    <article class="article">
+    <article class="article" data-lang="fr">
       <section id="intro">
         <h2>Introduction</h2>
         <p>
@@ -69,7 +107,6 @@
           En utilisant l’application, vous acceptez ces Conditions.
         </p>
       </section>
-
       <section id="objet">
         <h2>Objet du service</h2>
         <p>
@@ -78,7 +115,6 @@
           bancaire, fiscal ou d’investissement.
         </p>
       </section>
-
       <section id="compte">
         <h2>Compte et responsabilités</h2>
         <ul>
@@ -87,7 +123,6 @@
           <li>L’usage hors ligne et la synchro cloud relèvent de votre connexion et de votre compte.</li>
         </ul>
       </section>
-
       <section id="sauvegarde">
         <h2>Données et sauvegarde</h2>
         <p>
@@ -96,7 +131,6 @@
           l’app comme unique archive de vos finances.
         </p>
       </section>
-
       <section id="usage">
         <h2>Usage acceptable</h2>
         <ul>
@@ -105,7 +139,6 @@
           <li>N’essayez pas d’accéder aux comptes ou données d’autrui.</li>
         </ul>
       </section>
-
       <section id="propriete">
         <h2>Propriété intellectuelle</h2>
         <p>
@@ -113,7 +146,6 @@
           Les données financières que vous saisissez vous appartiennent.
         </p>
       </section>
-
       <section id="responsabilite">
         <h2>Limitation de responsabilité</h2>
         <p>
@@ -123,12 +155,10 @@
           financières prises à partir de l’application, ou de dommages indirects liés à son usage.
         </p>
       </section>
-
       <section id="acceptation">
         <h2>Acceptation</h2>
         <p>En utilisant Ngoma, vous affirmez comprendre et accepter ces Conditions.</p>
       </section>
-
       <section id="modification">
         <h2>Modification des Conditions</h2>
         <p>
@@ -137,11 +167,85 @@
           ou une mise à jour Play Store.
         </p>
       </section>
-
       <section id="contact">
         <h2>Contact</h2>
         <div class="contact-box">
           <p>Pour toute question concernant ces Conditions :</p>
+          <p>📧 <a href="mailto:cog.sh1ft3r@gmail.com">cog.sh1ft3r@gmail.com</a></p>
+        </div>
+      </section>
+    </article>
+
+    <article class="article" data-lang="en" hidden>
+      <section id="intro-en">
+        <h2>Introduction</h2>
+        <p>
+          These Terms govern access to and use of the Ngoma app
+          (package <code>com.shifter.ngoma</code>).
+          By using the app, you accept these Terms.
+        </p>
+      </section>
+      <section id="purpose">
+        <h2>Purpose of the service</h2>
+        <p>
+          Ngoma helps you record expenses, income, accounts, budgets, and transfers.
+          It is a personal tracking tool. It is not financial, banking, tax, or investment advice.
+        </p>
+      </section>
+      <section id="account">
+        <h2>Account and responsibilities</h2>
+        <ul>
+          <li>You are responsible for the accuracy of amounts and categories you enter.</li>
+          <li>You keep your credentials and amount-hiding PIN safe.</li>
+          <li>Offline use and cloud sync depend on your connection and account.</li>
+        </ul>
+      </section>
+      <section id="backup">
+        <h2>Data and backup</h2>
+        <p>
+          Entries are local first. A server copy exists only if you register and sync.
+          Do not rely on the app as your only archive of your finances.
+        </p>
+      </section>
+      <section id="acceptable">
+        <h2>Acceptable use</h2>
+        <ul>
+          <li>Use Ngoma for your own tracking or a household you manage.</li>
+          <li>Do not use the service for illegal activity.</li>
+          <li>Do not attempt to access other people’s accounts or data.</li>
+        </ul>
+      </section>
+      <section id="ip">
+        <h2>Intellectual property</h2>
+        <p>
+          Rights in the app and its code belong to the authors unless otherwise stated.
+          Financial data you enter belongs to you.
+        </p>
+      </section>
+      <section id="liability">
+        <h2>Limitation of liability</h2>
+        <p>
+          Ngoma is provided “as is”. We try to keep the service running but cannot
+          guarantee the absence of errors, data loss, or interruption. We are not
+          liable for financial decisions made from the app, or for indirect damages
+          from its use.
+        </p>
+      </section>
+      <section id="acceptance">
+        <h2>Acceptance</h2>
+        <p>By using Ngoma, you confirm that you understand and accept these Terms.</p>
+      </section>
+      <section id="changes">
+        <h2>Changes to the Terms</h2>
+        <p>
+          We may change these Terms; the latest version will be published here.
+          For a major change, we will inform users through the app or a Play Store update.
+        </p>
+      </section>
+      <section id="contact-en">
+        <h2>Contact</h2>
+        <div class="contact-box">
+          <p>Questions about these Terms:</p>
           <p>📧 <a href="mailto:cog.sh1ft3r@gmail.com">cog.sh1ft3r@gmail.com</a></p>
         </div>
       </section>
@@ -156,13 +260,19 @@
             <img class="brand-mark" src="assets/mark.png" alt="" />
             <span class="brand-text"><strong>NGOMA</strong></span>
           </a>
-          <p>Mola ! Track tes dépenses.</p>
+          <p data-lang="fr">Mola ! Track tes dépenses.</p>
+          <p data-lang="en" hidden>Mola! Track your spend.</p>
         </div>
         <div>
-          <h3>Documents</h3>
-          <ul>
+          <h3 data-lang="fr">Documents</h3>
+          <h3 data-lang="en" hidden>Documents</h3>
+          <ul data-lang="fr">
             <li><a href="privacy.html">Politique de confidentialité</a></li>
             <li><a href="terms.html">Conditions générales</a></li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="terms.html">Terms of use</a></li>
           </ul>
         </div>
         <div>
@@ -172,10 +282,12 @@
         </div>
       </div>
       <div class="copy">
-        <span>© 2026 Ngoma — Tous droits réservés</span>
+        <span data-lang="fr">© 2026 Ngoma — Tous droits réservés</span>
+        <span data-lang="en" hidden>© 2026 Ngoma — All rights reserved</span>
         <span>com.shifter.ngoma</span>
       </div>
     </div>
   </footer>
+  <script src="lang.js"></script>
 </body>
 </html>

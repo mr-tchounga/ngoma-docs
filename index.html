@@ -4,44 +4,66 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#121212" />
-  <meta name="description" content="Ngoma — Mola ! Track tes dépenses. Politique de confidentialité et conditions d’utilisation." />
+  <meta name="description" content="Ngoma — track your spend. Privacy policy and terms of use." />
   <title>Ngoma — Mola ! Track tes dépenses</title>
   <link rel="icon" href="assets/mark.png" />
   <link rel="apple-touch-icon" href="assets/mark.png" />
+  <link rel="alternate" hreflang="fr" href="index.html?lang=fr" />
+  <link rel="alternate" hreflang="en" href="index.html?lang=en" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip" href="#contenu">Aller au contenu</a>
+  <a class="skip" href="#contenu">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/mark.png" alt="Logo Ngoma" />
+        <img class="brand-mark" src="assets/mark.png" alt="Ngoma logo" />
         <span class="brand-text">
           <strong>NGOMA</strong>
           <small>25F ne cherche pas son frère</small>
         </span>
       </a>
-      <nav class="nav" aria-label="Principal">
-        <a href="index.html" class="active">Accueil</a>
-        <a href="privacy.html">Confidentialité</a>
-        <a href="terms.html">Conditions</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="nav" data-lang="fr" aria-label="Principal">
+          <a href="index.html" class="active">Accueil</a>
+          <a href="privacy.html">Confidentialité</a>
+          <a href="terms.html">Conditions</a>
+        </nav>
+        <nav class="nav" data-lang="en" hidden aria-label="Main">
+          <a href="index.html" class="active">Home</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-set-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <main id="contenu">
     <section class="hero">
       <div class="wrap hero-grid">
-        <div>
+        <div data-lang="fr">
           <span class="eyebrow">Application de suivi des dépenses</span>
           <h1>NGOMA</h1>
           <p class="lead">Mola ! Track tes dépenses. Tes comptes, budgets et virements restent d’abord sur ton téléphone — la synchro cloud est optionnelle.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="privacy.html">Politique de confidentialité</a>
             <a class="btn btn-ghost" href="terms.html">Conditions générales</a>
+          </div>
+        </div>
+        <div data-lang="en" hidden>
+          <span class="eyebrow">Personal expense tracker</span>
+          <h1>NGOMA</h1>
+          <p class="lead">Mola! Track your spend. Accounts, budgets, and transfers stay on your phone first — cloud sync is optional.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="privacy.html">Privacy policy</a>
+            <a class="btn btn-ghost" href="terms.html">Terms of use</a>
           </div>
         </div>
         <div class="logo-card">
@@ -52,24 +74,47 @@
 
     <section class="section">
       <div class="wrap">
-        <h2>Conçu pour le quotidien</h2>
-        <p class="muted">Les mêmes principes que dans l’app : clair, hors-ligne d’abord, et tes montants restent les tiens.</p>
-        <div class="cards">
-          <article class="card">
-            <div class="icon-dot" aria-hidden="true">📴</div>
-            <h3>Hors-ligne d’abord</h3>
-            <p>Écritures, comptes et catégories vivent dans une base locale. Tu peux suivre tes francs sans réseau.</p>
-          </article>
-          <article class="card">
-            <div class="icon-dot" aria-hidden="true">☁️</div>
-            <h3>Synchro optionnelle</h3>
-            <p>Un compte e-mail permet la sauvegarde serveur. Rien n’est envoyé tant que tu n’es pas connecté.</p>
-          </article>
-          <article class="card">
-            <div class="icon-dot" aria-hidden="true">🔒</div>
-            <h3>Montants masqués</h3>
-            <p>Un PIN local cache les soldes à l’écran. Il ne quitte pas l’appareil.</p>
-          </article>
+        <div data-lang="fr">
+          <h2>Conçu pour le quotidien</h2>
+          <p class="muted">Les mêmes principes que dans l’app : clair, hors-ligne d’abord, et tes montants restent les tiens.</p>
+          <div class="cards">
+            <article class="card">
+              <div class="icon-dot" aria-hidden="true">📴</div>
+              <h3>Hors-ligne d’abord</h3>
+              <p>Écritures, comptes et catégories vivent dans une base locale. Tu peux suivre tes francs sans réseau.</p>
+            </article>
+            <article class="card">
+              <div class="icon-dot" aria-hidden="true">☁️</div>
+              <h3>Synchro optionnelle</h3>
+              <p>Un compte e-mail permet la sauvegarde serveur. Rien n’est envoyé tant que tu n’es pas connecté.</p>
+            </article>
+            <article class="card">
+              <div class="icon-dot" aria-hidden="true">🔒</div>
+              <h3>Montants masqués</h3>
+              <p>Un PIN local cache les soldes à l’écran. Il ne quitte pas l’appareil.</p>
+            </article>
+          </div>
+        </div>
+        <div data-lang="en" hidden>
+          <h2>Built for daily use</h2>
+          <p class="muted">Same ideas as the app: clear, offline-first, and your amounts stay yours.</p>
+          <div class="cards">
+            <article class="card">
+              <div class="icon-dot" aria-hidden="true">📴</div>
+              <h3>Offline first</h3>
+              <p>Transactions, accounts, and categories live in a local database. You can track francs with no network.</p>
+            </article>
+            <article class="card">
+              <div class="icon-dot" aria-hidden="true">☁️</div>
+              <h3>Optional sync</h3>
+              <p>An email account enables server backup. Nothing is sent until you sign in.</p>
+            </article>
+            <article class="card">
+              <div class="icon-dot" aria-hidden="true">🔒</div>
+              <h3>Hidden amounts</h3>
+              <p>A local PIN hides balances on screen. It never leaves the device.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -83,13 +128,19 @@
             <img class="brand-mark" src="assets/mark.png" alt="" />
             <span class="brand-text"><strong>NGOMA</strong></span>
           </a>
-          <p>Mola ! Track tes dépenses.</p>
+          <p data-lang="fr">Mola ! Track tes dépenses.</p>
+          <p data-lang="en" hidden>Mola! Track your spend.</p>
         </div>
         <div>
-          <h3>Documents</h3>
-          <ul>
+          <h3 data-lang="fr">Documents</h3>
+          <h3 data-lang="en" hidden>Documents</h3>
+          <ul data-lang="fr">
             <li><a href="privacy.html">Politique de confidentialité</a></li>
             <li><a href="terms.html">Conditions générales</a></li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="terms.html">Terms of use</a></li>
           </ul>
         </div>
         <div>
@@ -99,10 +150,12 @@
         </div>
       </div>
       <div class="copy">
-        <span>© 2026 Ngoma — Tous droits réservés</span>
+        <span data-lang="fr">© 2026 Ngoma — Tous droits réservés</span>
+        <span data-lang="en" hidden>© 2026 Ngoma — All rights reserved</span>
         <span>com.shifter.ngoma</span>
       </div>
     </div>
   </footer>
+  <script src="lang.js"></script>
 </body>
 </html>

@@ -30,6 +30,7 @@ body {
 img { max-width: 100%; display: block; }
 a { color: var(--green-dark); text-decoration: none; }
 a:hover { text-decoration: underline; }
+[hidden] { display: none !important; }
 
 .wrap {
   width: min(var(--max), calc(100% - 32px));
@@ -114,6 +115,42 @@ a:hover { text-decoration: underline; }
 .nav a.active {
   background: var(--green);
   color: #fff;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 2px;
+  margin-left: 4px;
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,0.75);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  min-width: 40px;
+  min-height: 32px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.lang-switch button.active {
+  background: var(--green);
+  color: #fff;
+}
+
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
 .hero {
@@ -351,7 +388,8 @@ a:hover { text-decoration: underline; }
 
 @media (max-width: 640px) {
   .header-inner { flex-wrap: wrap; padding-block: 10px; }
-  .nav { width: 100%; justify-content: flex-start; }
+  .header-actions { width: 100%; justify-content: space-between; }
+  .nav { width: auto; justify-content: flex-start; }
   .nav a { padding: 8px 10px; font-size: 0.8rem; }
   .brand-text small { display: none; }
   .hero, .doc-hero { padding-top: 28px; }

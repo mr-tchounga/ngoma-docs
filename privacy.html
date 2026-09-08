@@ -4,47 +4,70 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#121212" />
-  <meta name="description" content="Politique de confidentialité de l’application Ngoma." />
-  <title>Politique de confidentialité — Ngoma</title>
+  <meta name="description" content="Privacy policy for the Ngoma app." />
+  <title>Privacy policy — Ngoma</title>
   <link rel="icon" href="assets/mark.png" />
   <link rel="apple-touch-icon" href="assets/mark.png" />
+  <link rel="alternate" hreflang="fr" href="privacy.html?lang=fr" />
+  <link rel="alternate" hreflang="en" href="privacy.html?lang=en" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip" href="#contenu">Aller au contenu</a>
+  <a class="skip" href="#contenu">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/mark.png" alt="Logo Ngoma" />
+        <img class="brand-mark" src="assets/mark.png" alt="Ngoma logo" />
         <span class="brand-text">
           <strong>NGOMA</strong>
           <small>25F ne cherche pas son frère</small>
         </span>
       </a>
-      <nav class="nav" aria-label="Principal">
-        <a href="index.html">Accueil</a>
-        <a href="privacy.html" class="active">Confidentialité</a>
-        <a href="terms.html">Conditions</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="nav" data-lang="fr" aria-label="Principal">
+          <a href="index.html">Accueil</a>
+          <a href="privacy.html" class="active">Confidentialité</a>
+          <a href="terms.html">Conditions</a>
+        </nav>
+        <nav class="nav" data-lang="en" hidden aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="privacy.html" class="active">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-set-lang="fr">FR</button>
+          <button type="button" data-set-lang="en">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <header class="doc-hero">
     <div class="wrap">
-      <span class="eyebrow">Documents légaux</span>
-      <h1>Politique de confidentialité</h1>
-      <div class="doc-meta">
-        <span class="chip">Effective : 8 septembre 2026</span>
-        <span class="chip">App : com.shifter.ngoma</span>
+      <div data-lang="fr">
+        <span class="eyebrow">Documents légaux</span>
+        <h1>Politique de confidentialité</h1>
+        <div class="doc-meta">
+          <span class="chip">Effective : 8 septembre 2026</span>
+          <span class="chip">App : com.shifter.ngoma</span>
+        </div>
+      </div>
+      <div data-lang="en" hidden>
+        <span class="eyebrow">Legal</span>
+        <h1>Privacy policy</h1>
+        <div class="doc-meta">
+          <span class="chip">Effective: 8 September 2026</span>
+          <span class="chip">App: com.shifter.ngoma</span>
+        </div>
       </div>
     </div>
   </header>
 
   <div class="wrap doc-layout" id="contenu">
-    <aside class="toc">
+    <aside class="toc" data-lang="fr">
       <h2>Sommaire</h2>
       <div class="toc-links">
         <a href="#intro">Introduction</a>
@@ -59,8 +82,23 @@
         <a href="#contact">Contact</a>
       </div>
     </aside>
+    <aside class="toc" data-lang="en" hidden>
+      <h2>Contents</h2>
+      <div class="toc-links">
+        <a href="#intro-en">Introduction</a>
+        <a href="#data">Data we collect</a>
+        <a href="#storage">Storage</a>
+        <a href="#use">How we use data</a>
+        <a href="#sharing">Sharing</a>
+        <a href="#children">Children</a>
+        <a href="#retention">Retention</a>
+        <a href="#rights">Your rights</a>
+        <a href="#security">Security</a>
+        <a href="#contact-en">Contact</a>
+      </div>
+    </aside>
 
-    <article class="article">
+    <article class="article" data-lang="fr">
       <section id="intro">
         <h2>Introduction</h2>
         <p>
@@ -70,7 +108,6 @@
           comment nous les protégeons et les droits dont vous disposez.
         </p>
       </section>
-
       <section id="donnees">
         <h2>Données collectées</h2>
         <ul>
@@ -81,7 +118,6 @@
           <li>Données techniques : type d’appareil, version de l’app, journaux d’erreur utiles au diagnostic.</li>
         </ul>
       </section>
-
       <section id="stockage">
         <h2>Stockage et synchronisation</h2>
         <p>
@@ -95,7 +131,6 @@
           n’êtes pas identifié et que la synchro n’est pas déclenchée.
         </p>
       </section>
-
       <section id="usage">
         <h2>Utilisation des données</h2>
         <p>Nous utilisons les données pour :</p>
@@ -107,7 +142,6 @@
           <li>Améliorer l’application, assurer la sécurité et diagnostiquer des problèmes.</li>
         </ul>
       </section>
-
       <section id="partage">
         <h2>Partage et divulgation</h2>
         <p>Nous ne vendons pas et ne louons pas vos données. Les données peuvent être partagées :</p>
@@ -117,7 +151,6 @@
         </ul>
         <p>Ngoma ne contient pas de publicité tierce et n’utilise pas vos finances à des fins commerciales.</p>
       </section>
-
       <section id="mineurs">
         <h2>Mineurs</h2>
         <p>
@@ -125,7 +158,6 @@
           Nous ne collectons pas sciemment de données personnelles auprès de mineurs.
         </p>
       </section>
-
       <section id="conservation">
         <h2>Conservation</h2>
         <p>
@@ -134,7 +166,6 @@
           conservées tant que votre compte existe, ou selon les obligations légales.
         </p>
       </section>
-
       <section id="droits">
         <h2>Vos droits</h2>
         <p>
@@ -143,7 +174,6 @@
           Pour un compte cloud, contactez-nous pour suppression du compte et des copies serveur.
         </p>
       </section>
-
       <section id="securite">
         <h2>Sécurité</h2>
         <p>
@@ -153,11 +183,101 @@
           contre tout accès non autorisé, divulgation ou destruction.
         </p>
       </section>
-
       <section id="contact">
         <h2>Contact</h2>
         <div class="contact-box">
           <p>Pour toute question concernant cette Politique :</p>
+          <p>📧 <a href="mailto:cog.sh1ft3r@gmail.com">cog.sh1ft3r@gmail.com</a></p>
+        </div>
+      </section>
+    </article>
+
+    <article class="article" data-lang="en" hidden>
+      <section id="intro-en">
+        <h2>Introduction</h2>
+        <p>
+          Ngoma is a personal expense tracker (“Mola! Track your spend”).
+          This policy explains what information we collect, why, how we protect it,
+          and the rights you have.
+        </p>
+      </section>
+      <section id="data">
+        <h2>Data we collect</h2>
+        <ul>
+          <li>Account: email address, password (stored hashed), phone number (if provided).</li>
+          <li>Financial data you enter: accounts, transactions, transfers, categories, budgets, scheduled operations.</li>
+          <li>Optional images: account or category icons from your gallery, stored on the device.</li>
+          <li>Local preferences: language, theme, amount-hiding PIN, reminders.</li>
+          <li>Technical data: device type, app version, error logs used for diagnostics.</li>
+        </ul>
+      </section>
+      <section id="storage">
+        <h2>Storage and sync</h2>
+        <p>
+          Ngoma is offline-first: your data is saved locally on the device (SQLite).
+          If you create an account and sign in, a copy may be synced to the Ngoma
+          server for backup and use on other devices.
+        </p>
+        <p>
+          Without a connection, the app still works. Nothing is sent until you are
+          signed in and sync runs.
+        </p>
+      </section>
+      <section id="use">
+        <h2>How we use data</h2>
+        <p>We use the data to:</p>
+        <ul>
+          <li>Authenticate your account and reset a password.</li>
+          <li>Show balances, stats, budgets, and reminders.</li>
+          <li>Back up and restore entries via cloud sync (when you are signed in).</li>
+          <li>Offer app updates through Google Play.</li>
+          <li>Improve the app, keep it secure, and diagnose problems.</li>
+        </ul>
+      </section>
+      <section id="sharing">
+        <h2>Sharing and disclosure</h2>
+        <p>We do not sell or rent your data. Data may be shared:</p>
+        <ul>
+          <li>With technical providers (server hosting, Google Play) under contract.</li>
+          <li>When required by law (court orders, competent authorities).</li>
+        </ul>
+        <p>Ngoma has no third-party ads and does not use your finances for commercial targeting.</p>
+      </section>
+      <section id="children">
+        <h2>Children</h2>
+        <p>
+          Ngoma is not intended for children under 13.
+          We do not knowingly collect personal data from children.
+        </p>
+      </section>
+      <section id="retention">
+        <h2>Retention</h2>
+        <p>
+          Local data stays on your device until you clear it or uninstall the app.
+          Synced data is kept while your account exists, or as required by law.
+        </p>
+      </section>
+      <section id="rights">
+        <h2>Your rights</h2>
+        <p>
+          You may request access to, correction of, or deletion of your personal data.
+          In the app: Settings → clear local data.
+          For a cloud account, contact us to delete the account and server copies.
+        </p>
+      </section>
+      <section id="security">
+        <h2>Security</h2>
+        <p>
+          Passwords are never stored in plain text. Sessions use an authentication token.
+          An optional PIN hides amounts on screen; it stays on the device.
+          We use appropriate technical and organisational measures to protect your data
+          against unauthorised access, disclosure, or destruction.
+        </p>
+      </section>
+      <section id="contact-en">
+        <h2>Contact</h2>
+        <div class="contact-box">
+          <p>Questions about this policy:</p>
           <p>📧 <a href="mailto:cog.sh1ft3r@gmail.com">cog.sh1ft3r@gmail.com</a></p>
         </div>
       </section>
@@ -172,13 +292,19 @@
             <img class="brand-mark" src="assets/mark.png" alt="" />
             <span class="brand-text"><strong>NGOMA</strong></span>
           </a>
-          <p>Mola ! Track tes dépenses.</p>
+          <p data-lang="fr">Mola ! Track tes dépenses.</p>
+          <p data-lang="en" hidden>Mola! Track your spend.</p>
         </div>
         <div>
-          <h3>Documents</h3>
-          <ul>
+          <h3 data-lang="fr">Documents</h3>
+          <h3 data-lang="en" hidden>Documents</h3>
+          <ul data-lang="fr">
             <li><a href="privacy.html">Politique de confidentialité</a></li>
             <li><a href="terms.html">Conditions générales</a></li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="terms.html">Terms of use</a></li>
           </ul>
         </div>
         <div>
@@ -188,10 +314,12 @@
         </div>
       </div>
       <div class="copy">
-        <span>© 2026 Ngoma — Tous droits réservés</span>
+        <span data-lang="fr">© 2026 Ngoma — Tous droits réservés</span>
+        <span data-lang="en" hidden>© 2026 Ngoma — All rights reserved</span>
         <span>com.shifter.ngoma</span>
       </div>
     </div>
   </footer>
+  <script src="lang.js"></script>
 </body>
 </html>

@@ -8,6 +8,8 @@ Privacy policy URL (after GitHub Pages is on):
 
 `https://mr-tchounga.github.io/ngoma-docs/privacy.html`
 
+English: add `?lang=en` (example: `privacy.html?lang=en`). FR/EN toggle is in the header.
+
 ## GitHub Pages
 
 1. Push this repo to `https://github.com/mr-tchounga/ngoma-docs`
