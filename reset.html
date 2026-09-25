@@ -3,53 +3,48 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#121212" />
+  <meta name="theme-color" content="#000000" />
   <title>NGOMA — Réinitialisation / Password reset</title>
   <link rel="icon" href="assets/mark.png" />
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    .reset-card { max-width: 420px; margin: 48px auto; padding: 28px; background: #fff; border-radius: 18px; box-shadow: 0 18px 50px rgba(18,18,18,.08); text-align: center; }
-    .reset-brand { margin: 0 0 8px; font-weight: 800; letter-spacing: .08em; color: #2e7d32; }
-    .reset-code { font-size: 36px; letter-spacing: .28em; font-weight: 800; margin: 16px 0 24px; }
-    .reset-btn { display: inline-block; background: #4caf50; color: #fff !important; text-decoration: none !important; padding: 14px 22px; border-radius: 10px; font-weight: 700; }
-    .reset-note { margin-top: 20px; color: #5f6368; font-size: 14px; }
+    html, body { margin: 0; background: #000; color: #fff; font-family: Arial, Helvetica, sans-serif; }
+    main { max-width: 420px; margin: 0 auto; padding: 36px 24px 48px; }
+    .brand { margin: 0 0 28px; font-size: 13px; font-weight: 700; }
+    .dot { color: #4caf50; }
+    h1 { margin: 0 0 16px; font-size: 22px; line-height: 1.3; }
+    .code { margin: 0 0 28px; font-size: 48px; line-height: 1; font-weight: 700; letter-spacing: 4px; }
+    .btn { display: inline-block; background: #4caf50; color: #111; text-decoration: none; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 999px; }
+    .note { margin: 28px 0 0; color: #9e9e9e; font-size: 15px; line-height: 1.5; }
   </style>
 </head>
 <body>
-  <main class="reset-card">
-    <p class="reset-brand">NGOMA</p>
-    <h1>Votre code / Your code</h1>
-    <p id="code" class="reset-code">————</p>
-    <a id="open" class="reset-btn" href="#">Ouvrir NGOMA / Open NGOMA</a>
-    <p id="hint" class="reset-note">
-      Saisissez ce code dans l'application si le bouton n'ouvre pas NGOMA.<br>
-      Enter this code in the app if the button does not open NGOMA.
+  <main>
+    <p class="brand">NGOMA <span class="dot">●</span></p>
+    <h1 id="title">Ouverture de NGOMA… / Opening NGOMA…</h1>
+    <p id="code" class="code">————</p>
+    <a id="open" class="btn" href="#">Ouvrir NGOMA / Open NGOMA</a>
+    <p class="note">
+      Saisissez ce code dans l'application si NGOMA ne s'ouvre pas.<br>
+      Enter this code in the app if NGOMA does not open.
     </p>
   </main>
   <script>
-    const token = new URLSearchParams(location.search).get('token') || '';
-    const httpsPage = location.origin + location.pathname + (token ? ('?token=' + encodeURIComponent(token)) : '');
+    const params = new URLSearchParams(location.search);
+    const token = params.get('token') || '';
+    const stay = params.get('stay') === '1';
+    const android = /Android/i.test(navigator.userAgent || '');
     const appLink = 'com.shifter.ngoma://login-callback/?type=recovery&token=' + encodeURIComponent(token);
-    const chromeLink = 'intent://' + location.host + location.pathname
-      + (token ? ('?token=' + encodeURIComponent(token)) : '')
-      + '#Intent;scheme=https;action=android.intent.action.VIEW;end';
-    const inGmail = /Gmail|GoogleApp|; wv\)/i.test(navigator.userAgent || '');
+    const intentLink = 'intent://login-callback/?type=recovery&token=' + encodeURIComponent(token)
+      + '#Intent;scheme=com.shifter.ngoma;package=com.shifter.ngoma;end';
+    const target = android ? intentLink : appLink;
 
     const codeEl = document.getElementById('code');
     const openEl = document.getElementById('open');
-    const hintEl = document.getElementById('hint');
     if (token) codeEl.textContent = token;
+    openEl.href = target;
 
-    // Gmail's in-app browser launching the custom scheme kills the app.
-    // Break out to Chrome first; Chrome → NGOMA is the path that works.
-    if (inGmail) {
-      openEl.textContent = 'Continuer dans Chrome / Continue in Chrome';
-      openEl.href = chromeLink;
-      hintEl.innerHTML =
-        'Gmail ouvre cette page dans sa propre fenêtre. Continuez dans Chrome, puis ouvrez NGOMA.<br>' +
-        'Gmail opens this page in its own window. Continue in Chrome, then open NGOMA.';
-    } else {
-      openEl.href = appLink;
+    if (token && !stay) {
+      window.location.replace(target);
     }
   </script>
 </body>
