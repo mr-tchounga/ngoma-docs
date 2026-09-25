@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#121212" />
+  <title>NGOMA — Réinitialisation / Password reset</title>
+  <link rel="icon" href="assets/mark.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .reset-card { max-width: 420px; margin: 48px auto; padding: 28px; background: #fff; border-radius: 18px; box-shadow: 0 18px 50px rgba(18,18,18,.08); text-align: center; }
+    .reset-brand { margin: 0 0 8px; font-weight: 800; letter-spacing: .08em; color: #2e7d32; }
+    .reset-code { font-size: 36px; letter-spacing: .28em; font-weight: 800; margin: 16px 0 24px; }
+    .reset-btn { display: inline-block; background: #4caf50; color: #fff !important; text-decoration: none !important; padding: 14px 22px; border-radius: 10px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="reset-card">
+    <p class="reset-brand">NGOMA</p>
+    <h1>Ouvrir l'application / Open the app</h1>
+    <p>Votre code de réinitialisation<br>Your reset code</p>
+    <p id="code" class="reset-code">————</p>
+    <a id="open" class="reset-btn" href="#">Ouvrir NGOMA / Open NGOMA</a>
+    <p style="margin-top:20px;color:#5f6368;font-size:14px">
+      Saisissez ce code dans l'application si le lien n'ouvre pas NGOMA.<br>
+      Enter this code in the app if the link does not open NGOMA.
+    </p>
+  </main>
+  <script>
+    const token = new URLSearchParams(location.search).get('token') || '';
+    const app = 'com.shifter.ngoma://login-callback/?type=recovery&token=' + encodeURIComponent(token);
+    const codeEl = document.getElementById('code');
+    const openEl = document.getElementById('open');
+    if (token) codeEl.textContent = token;
+    openEl.href = app;
+    if (token) {
+      window.location.replace(app);
+    }
+  </script>
+</body>
+</html>
